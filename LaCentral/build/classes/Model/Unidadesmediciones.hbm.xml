@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/08/2013 10:09:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Unidadesmediciones" table="unidadesmediciones" catalog="global">
+        <id name="claveUnidadMedicion" type="java.lang.Integer">
+            <column name="claveUnidadMedicion" />
+            <generator class="identity" />
+        </id>
+        <property name="unidadMedicion" type="string">
+            <column name="unidadMedicion" length="4" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="45" />
+        </property>
+        <set name="detallesproductoses" inverse="true">
+            <key>
+                <column name="unidadMedicion" not-null="true" />
+            </key>
+            <one-to-many class="Model.Detallesproductos" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/global</property>
+    <property name="hibernate.connection.username">root</property>
+    <mapping resource="Model/Marcas.hbm.xml"/>
+    <mapping resource="Model/Formaspagos.hbm.xml"/>
+    <mapping resource="Model/Domicilios.hbm.xml"/>
+    <mapping resource="Model/Municipios.hbm.xml"/>
+    <mapping resource="Model/Unidadesmediciones.hbm.xml"/>
+    <mapping resource="Model/Sucursales.hbm.xml"/>
+    <mapping resource="Model/Personas.hbm.xml"/>
+    <mapping resource="Model/Comprasclientes.hbm.xml"/>
+    <mapping resource="Model/Calidades.hbm.xml"/>
+    <mapping resource="Model/Productos.hbm.xml"/>
+    <mapping resource="Model/Detallescompras.hbm.xml"/>
+    <mapping resource="Model/Facturas.hbm.xml"/>
+    <mapping resource="Model/Clientes.hbm.xml"/>
+    <mapping resource="Model/Detallesproductos.hbm.xml"/>
+    <mapping resource="Model/Descuentos.hbm.xml"/>
+    <mapping resource="Model/Codigospostales.hbm.xml"/>
+    <mapping resource="Model/Contactos.hbm.xml"/>
+    <mapping resource="Model/Historiales.hbm.xml"/>
+    <mapping resource="Model/Usuarios.hbm.xml"/>
+    <mapping resource="Model/Direcciones.hbm.xml"/>
+    <mapping resource="Model/Estados.hbm.xml"/>
+    <mapping resource="Model/Categorias.hbm.xml"/>
+    <mapping resource="Model/Presupuestos.hbm.xml"/>
+    <mapping resource="Model/Empresasproveedoras.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

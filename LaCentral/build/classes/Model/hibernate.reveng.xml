@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="global"/>
+  <table-filter match-name="direcciones"/>
+  <table-filter match-name="calidades"/>
+  <table-filter match-name="presupuestos"/>
+  <table-filter match-name="empresasproveedoras"/>
+  <table-filter match-name="contactos"/>
+  <table-filter match-name="clientes"/>
+  <table-filter match-name="codigospostales"/>
+  <table-filter match-name="unidadesmediciones"/>
+  <table-filter match-name="detallescompras"/>
+  <table-filter match-name="sucursales"/>
+  <table-filter match-name="usuarios"/>
+  <table-filter match-name="marcas"/>
+  <table-filter match-name="descuentos"/>
+  <table-filter match-name="detallesproductos"/>
+  <table-filter match-name="formaspagos"/>
+  <table-filter match-name="categorias"/>
+  <table-filter match-name="municipios"/>
+  <table-filter match-name="historiales"/>
+  <table-filter match-name="productos"/>
+  <table-filter match-name="personas"/>
+  <table-filter match-name="estados"/>
+  <table-filter match-name="domicilios"/>
+  <table-filter match-name="facturas"/>
+  <table-filter match-name="comprasclientes"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/08/2013 10:09:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Descuentos" table="descuentos" catalog="global">
+        <id name="claveDescuento" type="java.lang.Integer">
+            <column name="claveDescuento" />
+            <generator class="identity" />
+        </id>
+        <property name="descuento" type="float">
+            <column name="descuento" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="20" />
+        </property>
+        <set name="comprasclienteses" inverse="true">
+            <key>
+                <column name="descuento" not-null="true" />
+            </key>
+            <one-to-many class="Model.Comprasclientes" />
+        </set>
+    </class>
+</hibernate-mapping>

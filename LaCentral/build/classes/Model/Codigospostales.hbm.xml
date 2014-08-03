@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/08/2013 10:09:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Codigospostales" table="codigospostales" catalog="global">
+        <id name="claveCodigoPostal" type="java.lang.Integer">
+            <column name="claveCodigoPostal" />
+            <generator class="identity" />
+        </id>
+        <property name="codigoPostal" type="string">
+            <column name="codigoPostal" length="5" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="50" />
+        </property>
+        <set name="municipioses" inverse="true">
+            <key>
+                <column name="codigoPostal" />
+            </key>
+            <one-to-many class="Model.Municipios" />
+        </set>
+    </class>
+</hibernate-mapping>

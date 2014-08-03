@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/08/2013 10:09:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Municipios" table="municipios" catalog="global">
+        <id name="claveMunicipio" type="java.lang.Integer">
+            <column name="claveMunicipio" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="codigospostales" class="Model.Codigospostales" fetch="select">
+            <column name="codigoPostal" />
+        </many-to-one>
+        <many-to-one name="estados" class="Model.Estados" fetch="select">
+            <column name="estado" not-null="true" />
+        </many-to-one>
+        <property name="municipio" type="string">
+            <column name="municipio" length="30" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="50" />
+        </property>
+        <set name="domicilioses" inverse="true">
+            <key>
+                <column name="municipio" not-null="true" />
+            </key>
+            <one-to-many class="Model.Domicilios" />
+        </set>
+    </class>
+</hibernate-mapping>

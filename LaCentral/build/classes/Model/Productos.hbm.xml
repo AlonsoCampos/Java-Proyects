@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/08/2013 10:09:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Productos" table="productos" catalog="global">
+        <id name="claveProducto" type="java.lang.Integer">
+            <column name="claveProducto" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="imagen" type="string">
+            <column name="imagen" length="65535" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="45" />
+        </property>
+        <set name="presupuestoses" inverse="true">
+            <key>
+                <column name="producto" not-null="true" />
+            </key>
+            <one-to-many class="Model.Presupuestos" />
+        </set>
+        <set name="detallescomprases" inverse="true">
+            <key>
+                <column name="producto" not-null="true" />
+            </key>
+            <one-to-many class="Model.Detallescompras" />
+        </set>
+        <set name="detallesproductoses" inverse="true">
+            <key>
+                <column name="producto" not-null="true" />
+            </key>
+            <one-to-many class="Model.Detallesproductos" />
+        </set>
+    </class>
+</hibernate-mapping>

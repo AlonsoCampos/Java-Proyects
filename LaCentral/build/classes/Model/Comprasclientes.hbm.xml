@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/08/2013 10:09:47 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Comprasclientes" table="comprasclientes" catalog="global">
+        <id name="claveCompraCliente" type="java.lang.Integer">
+            <column name="claveCompraCliente" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="formaspagos" class="Model.Formaspagos" fetch="select">
+            <column name="formaPago" not-null="true" />
+        </many-to-one>
+        <many-to-one name="historiales" class="Model.Historiales" fetch="select">
+            <column name="historial" not-null="true" />
+        </many-to-one>
+        <many-to-one name="descuentos" class="Model.Descuentos" fetch="select">
+            <column name="descuento" not-null="true" />
+        </many-to-one>
+        <property name="fechaCompra" type="date">
+            <column name="fechaCompra" length="10" not-null="true" />
+        </property>
+        <property name="subtotal" type="float">
+            <column name="subtotal" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="total" type="float">
+            <column name="total" precision="12" scale="0" not-null="true" />
+        </property>
+        <set name="facturases" inverse="true">
+            <key>
+                <column name="venta" not-null="true" />
+            </key>
+            <one-to-many class="Model.Facturas" />
+        </set>
+        <set name="detallescomprases" inverse="true">
+            <key>
+                <column name="compraCliente" not-null="true" />
+            </key>
+            <one-to-many class="Model.Detallescompras" />
+        </set>
+    </class>
+</hibernate-mapping>
